@@ -40,6 +40,7 @@
     "*.ts": "pnpm run lint"
   },
   "dependencies": {
+    "@charrue/composable": "^0.1.1",
     "@vueuse/core": "^9.3.1",
     "element-plus": "^2.2.18",
     "vue": "^3.2.41"

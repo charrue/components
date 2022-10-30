@@ -50,10 +50,12 @@ importers:
 
   packages/core:
     specifiers:
+      '@charrue/composable': ^0.1.1
       '@vueuse/core': ^9.3.1
       element-plus: ^2.2.18
       vue: ^3.2.41
     dependencies:
+      '@charrue/composable': 0.1.1_vue@3.2.41
       '@vueuse/core': 9.3.1_vue@3.2.41
       element-plus: 2.2.19_vue@3.2.41
       vue: 3.2.41
@@ -584,6 +586,16 @@ packages:
       human-id: 1.0.2
       prettier: 2.7.1
     dev: true
+
+  /@charrue/composable/0.1.1_vue@3.2.41:
+    resolution: {integrity: sha512-uYcs18eC3N+KcRwa1zIYdBhrxkcMwKJA3pSJtSOYbtYRzF0mytw/cm7IRu1numT6B7BQk15z96Bg2YDww6nocQ==}
+    dependencies:
+      '@vueuse/core': 9.3.1_vue@3.2.41
+      vue-demi: 0.13.11_vue@3.2.41
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@charrue/eslint-config-base/0.3.0_yxvyo6v5zwzggfecalzmx54lre:
     resolution: {integrity: sha512-kgHQYYCmS+jhhk6cXZMQg+EHF5k4jAHqycKc7lqslJafdZ3wydNrC3SWGOneDKibm6oyTswTHz+sW73QrbvV/Q==}
