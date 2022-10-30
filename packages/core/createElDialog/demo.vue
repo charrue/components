@@ -2,9 +2,9 @@
 import { createElDialog } from "@charrue/ep";
 import AddressForm from "./AddressForm.vue";
 
-const { DialogComponent, toggle } = createElDialog(AddressForm, {
+const [DialogComponent, { toggle }] = createElDialog(AddressForm, {
   title: "Shipping address",
-  appendToBody: true
+  appendToBody: true,
 });
 </script>
 

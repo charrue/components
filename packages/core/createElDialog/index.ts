@@ -1,4 +1,4 @@
-import { ref, h } from "vue";
+import { ref, h, VNode } from "vue";
 import { ElDialog, DialogProps } from "element-plus";
 
 type CreateElDialogOptions = Partial<Omit<DialogProps, "modelValue">>;
@@ -23,10 +23,17 @@ type CreateElDialogEvents = Partial<{
 }>;
 
 export const createElDialog = (
-  Comp: any,
+  NestedComponent: any,
   dialogProps: CreateElDialogOptions = elDialogDefaultProps,
   dialogEvents: CreateElDialogEvents = {},
-) => {
+): [
+    () => VNode,
+    {
+      toggle: () => void;
+      open: () => void;
+      close: () => void;
+    }
+  ] => {
   const dialogPropsWithDefaults = Object.assign(elDialogDefaultProps, dialogProps);
   const visible = ref(false);
 
@@ -40,21 +47,20 @@ export const createElDialog = (
     visible.value = false;
   };
 
-  console.log(Comp)
-
   const DialogComponent = () => h(ElDialog, {
     modelValue: visible.value,
     ...dialogPropsWithDefaults,
     ...dialogEvents,
     "onUpdate:modelValue": toggle,
   }, {
-    default: () => h(Comp)
+    default: () => h(NestedComponent),
   });
 
-  return {
-    DialogComponent,
-    toggle,
-    open,
-    close,
-  };
+  return [
+    DialogComponent, {
+      toggle,
+      open,
+      close,
+    },
+  ];
 };
