@@ -26,7 +26,6 @@ export const useFoundationForm = <T extends object>(options: useFoundationFormOp
 
   const submitForm = async () => {
     try {
-      console.log(elFormRef.value);
       await elFormRef.value?.validate();
       setLoadingState(true);
       await onSubmit(formData.value);

@@ -5,6 +5,7 @@ const Guide = [{ text: "Get Started", link: "/guide/" }];
 const CoreCategories = [
   { text: "createElDialog", link: "/core/createElDialog/" },
   { text: "useFoundationForm", link: "/core/useFoundationForm/" },
+  { text: "OptionList", link: "/core/option-list/" },
 ];
 
 const DefaultSideBar = [
