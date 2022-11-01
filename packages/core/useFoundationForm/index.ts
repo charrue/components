@@ -8,7 +8,8 @@ interface useFoundationFormOptions<T> {
   onSubmit: (data: T | UnwrapRef<T>) => Promise<any>;
 }
 
-const defaultDisabledFactory = (data: Record<string, any>) => Object.values(data).every(Boolean);
+const defaultDisabledFactory = (data: Record<string, any>) => Object.values(data).some((t) => !t);
+
 export const useFoundationForm = <T extends object>(options: useFoundationFormOptions<T>) => {
   const {
     initialValue,
@@ -25,10 +26,13 @@ export const useFoundationForm = <T extends object>(options: useFoundationFormOp
 
   const submitForm = async () => {
     try {
+      console.log(elFormRef.value);
       await elFormRef.value?.validate();
       setLoadingState(true);
       await onSubmit(formData.value);
+      setLoadingState(false);
     } catch (e) {
+      setLoadingState(false);
       onError?.(e);
     }
   };

@@ -2,7 +2,10 @@ import { defineConfig } from "vitepress";
 
 const Guide = [{ text: "Get Started", link: "/guide/" }];
 
-const CoreCategories = [{ text: "createElDialog", link: "/core/createElDialog/" }];
+const CoreCategories = [
+  { text: "createElDialog", link: "/core/createElDialog/" },
+  { text: "useFoundationForm", link: "/core/useFoundationForm/" },
+];
 
 const DefaultSideBar = [
   { text: "Guide", items: Guide },
