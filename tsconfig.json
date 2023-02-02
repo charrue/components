@@ -23,7 +23,7 @@
       "vitest/globals"
     ],
     "paths": {
-      "@charrue/ep": ["./packages/core/index.ts"]
+      "@charrue/ep": ["./packages/ep/index.ts"]
     }
   },
   "include": [

@@ -3,19 +3,19 @@ import { defineConfig } from "vitepress";
 const Guide = [{ text: "Get Started", link: "/guide/" }];
 
 const CoreCategories = [
-  { text: "createElDialog", link: "/core/createElDialog/" },
-  { text: "useFoundationForm", link: "/core/useFoundationForm/" },
-  { text: "OptionList", link: "/core/option-list/" },
+  { text: "createElDialog", link: "/ep/createElDialog/" },
+  { text: "useFoundationForm", link: "/ep/useFoundationForm/" },
+  { text: "OptionList", link: "/ep/option-list/" },
 ];
 
 const DefaultSideBar = [
   { text: "Guide", items: Guide },
-  { text: "Core", items: CoreCategories },
+  { text: "ElementPlus", items: CoreCategories },
 ];
 
 export default defineConfig({
-  title: "element plus toolkit",
-  description: "基于Element Plus的工具集",
+  title: "charrue components",
+  description: "组件集",
 
   head: [
     ["link", { rel: "stylesheet", href: "//unpkg.com/element-plus/dist/index.css" }]
@@ -33,8 +33,5 @@ export default defineConfig({
     sidebar: {
       "/guide/": DefaultSideBar,
     },
-
-    
   },
-
 });

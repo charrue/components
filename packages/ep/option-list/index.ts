@@ -4,6 +4,7 @@ import { ElSelect, ElOption, ElOptionGroup } from "element-plus";
 interface OptionListEnum {
   label: string;
   value: string | number;
+  disabled?: boolean;
 
   children?: OptionListEnum[];
 }
@@ -51,6 +52,7 @@ export const OptionList = defineComponent({
             {
               label: item.label,
               value: item.value,
+              disabled: item.disabled,
               key: `option-group-item-${index}-${item.value}`,
             },
             () => item.children!.map((t, idx) => h(ElOption, {

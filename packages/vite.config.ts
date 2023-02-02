@@ -8,7 +8,7 @@ import { mdPlugin } from "./.vitepress/plugins/md";
 export default defineConfig({
   resolve: {
     alias: {
-      "@charrue/ep": join(__dirname, "core/index.ts"),
+      "@charrue/ep": join(__dirname, "ep/index.ts"),
     },
   },
   plugins: [

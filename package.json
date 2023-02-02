@@ -8,7 +8,7 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint --cache packages/.vitepress",
     "docs": "vitepress dev packages --open",
-    "build:types": "tsc --emitDeclarationOnly && pnpm run types:fix",
+    "build:types": "tsc --emitDeclarationOnly",
     "test": "pnpm --filter=@charrue/ep run test",
     "build": "pnpm --filter=@charrue/ep run build"
   },
